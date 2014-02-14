@@ -46,6 +46,15 @@ where cid in(
 		from orders
 		where pid = 'p07')
 	    )
-	order by cid asc;
+order by cid asc;
+
+--Query 5
+select distinct pid
+from orders
+where cid in
+	(select cid
+	from orders
+	where aid = 'a03')
+order by pid asc;
 
 	
