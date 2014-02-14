@@ -34,3 +34,18 @@ where cid not in
 	from orders
 	where aid = 'a03');
 
+--Query 4
+select distinct cid, name
+from customers
+where cid in(
+		(select cid
+		from orders
+		where pid = 'p01')
+		intersect
+		(select cid
+		from orders
+		where pid = 'p07')
+	    )
+	order by cid asc;
+
+	
