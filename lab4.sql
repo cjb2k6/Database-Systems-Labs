@@ -70,3 +70,15 @@ where cid in
 		or city = 'Duluth')
 	)
 order by name asc;
+
+--Query 7
+select *
+from customers
+where city != 'Dallas'
+and city != 'Kyoto' 
+and discount in 
+		(select discount
+		from customers
+		where city = 'Dallas' 
+		or city = 'Kyoto')
+order by cid asc;
