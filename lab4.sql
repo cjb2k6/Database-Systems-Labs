@@ -57,4 +57,16 @@ where cid in
 	where aid = 'a03')
 order by pid asc;
 
-	
+--Query 6
+select name, discount
+from customers
+where cid in
+	(select cid
+	from orders
+	where aid in
+		(select aid
+		from agents
+		where city = 'Dallas'
+		or city = 'Duluth')
+	)
+order by name asc;
