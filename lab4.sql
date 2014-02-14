@@ -26,3 +26,11 @@ where aid in
 		)
 order by pid asc;
 
+--Query 3
+select cid, name
+from customers
+where cid not in
+	(select cid
+	from orders
+	where aid = 'a03');
+
