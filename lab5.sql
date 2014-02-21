@@ -41,3 +41,9 @@ select distinct c.name, a.name
 from customers c, orders o, agents a
 where c.cid = o.cid and a.aid = o.aid and c.city = a.city
 order by c.name asc;
+
+--Query 6
+select c.name, a.name, c.city
+from customers c, agents a
+where c.city = a.city
+order by c.name asc;
