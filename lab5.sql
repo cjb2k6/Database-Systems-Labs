@@ -47,3 +47,9 @@ select c.name, a.name, c.city
 from customers c, agents a
 where c.city = a.city
 order by c.name asc;
+
+--Query 7
+select distinct c.name, p.city
+from customers c, products p
+where c.city = p.city;
+--Not sure how to do this one
