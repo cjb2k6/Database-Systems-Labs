@@ -28,3 +28,9 @@ where not cid in
 	)
 order by name asc;
 
+--Query 4
+select distinct c.name
+from customers c
+left outer join orders o
+	on c.cid = o.cid
+where o.cid is null;
