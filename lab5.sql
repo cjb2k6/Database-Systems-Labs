@@ -33,4 +33,11 @@ select distinct c.name
 from customers c
 left outer join orders o
 	on c.cid = o.cid
-where o.cid is null;
+where o.cid is null
+order by name asc;
+
+--Query 5
+select distinct c.name, a.name
+from customers c, orders o, agents a
+where c.cid = o.cid and a.aid = o.aid and c.city = a.city
+order by c.name asc;
