@@ -19,3 +19,12 @@ inner join orders o2
 	on o2.aid = o.aid and c.city = 'Kyoto'
 order by pid asc;
 
+--Query 3
+select distinct name
+from customers
+where not cid in
+	(select cid
+	from orders
+	)
+order by name asc;
+
