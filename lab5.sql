@@ -51,5 +51,9 @@ order by c.name asc;
 --Query 7
 select distinct c.name, p.city
 from customers c, products p
-where c.city = p.city;
---Not sure how to do this one
+where c.city = p.city and p.city in (
+				select city
+				from products
+				group by city
+				order by sum(quantity) asc
+				limit 1);
